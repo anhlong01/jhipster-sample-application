@@ -1,0 +1,31 @@
+{
+  "annotations": {
+    "changelogDate": "20250325022547"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "studentName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sex",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "studentClass",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "studentKhoahoc",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dob",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "name": "Student",
+  "relationships": [],
+  "searchEngine": "no"
+}

@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (subjectRegister(); as subjectRegisterRef) {
+      <div>
+        <h2 data-cy="subjectRegisterDetailsHeading"><span>Subject Register</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span>ID</span></dt>
+          <dd>
+            <span>{{ subjectRegisterRef.id }}</span>
+          </dd>
+          <dt><span>Student</span></dt>
+          <dd>
+            @if (subjectRegister()!.student) {
+              <div>
+                <a [routerLink]="['/student', subjectRegister()!.student?.id, 'view']">{{ subjectRegisterRef.student?.id }}</a>
+              </div>
+            }
+          </dd>
+          <dt><span>Subject</span></dt>
+          <dd>
+            @if (subjectRegister()!.subject) {
+              <div>
+                <a [routerLink]="['/subject', subjectRegister()!.subject?.id, 'view']">{{ subjectRegisterRef.subject?.id }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/subject-register', subjectRegisterRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

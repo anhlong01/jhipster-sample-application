@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (subjectList.length != 0) {
+      <div>
+        <h2 data-cy="studentDetailsHeading"><span>Môn học</span></h2>
+
+        <hr />
+
+        <div class="row-md">
+          <ul class="list-group">
+            <li *ngFor="let subject of subjectList" class="list-group-item">{{ subject }}</li>
+          </ul>
+        </div>
+      </div>
+    } @else {
+      <div class="alert alert-warning" id="no-result">
+        <span>Sinh viên này không đăng ký môn nào</span>
+      </div>
+    }
+  </div>
+</div>

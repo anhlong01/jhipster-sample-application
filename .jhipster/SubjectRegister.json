@@ -1,0 +1,23 @@
+{
+  "annotations": {
+    "changelogDate": "20250325022549"
+  },
+  "applications": "*",
+  "fields": [],
+  "name": "SubjectRegister",
+  "relationships": [
+    {
+      "otherEntityName": "student",
+      "relationshipName": "student",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "subject",
+      "relationshipName": "subject",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

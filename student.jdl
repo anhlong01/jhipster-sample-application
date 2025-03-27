@@ -1,0 +1,33 @@
+entity Student {
+  studentName String
+  sex String
+  studentClass String
+  studentKhoahoc String
+  dob LocalDate
+}
+
+entity Subject {
+  subjectDescription String
+}
+
+entity SubjectRegister {
+
+}
+
+entity Mark {
+  score Float
+}
+
+relationship ManyToOne {
+  SubjectRegister{student} to Student
+}
+
+relationship ManyToOne {
+  SubjectRegister{subject} to Subject
+}
+
+relationship OneToOne {
+  Mark{subjectRegister} to SubjectRegister
+}
+
+

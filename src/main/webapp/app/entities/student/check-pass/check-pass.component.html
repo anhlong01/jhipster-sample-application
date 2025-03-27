@@ -1,0 +1,17 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (result.length != 0) {
+      <div>
+        <h2 data-cy="studentDetailsHeading"><span>Kết quả </span></h2>
+
+        <hr />
+        <h5 *ngIf="result.includes('qua')" class="text-success">{{ result }}</h5>
+        <h5 *ngIf="result.includes('tạch')" class="text-danger">{{ result }}</h5>
+      </div>
+    } @else {
+      <div class="alert alert-warning" id="no-result">
+        <span>{{ error }}</span>
+      </div>
+    }
+  </div>
+</div>

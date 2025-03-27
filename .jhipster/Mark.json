@@ -1,0 +1,22 @@
+{
+  "annotations": {
+    "changelogDate": "20250325022546"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "score",
+      "fieldType": "Float"
+    }
+  ],
+  "name": "Mark",
+  "relationships": [
+    {
+      "otherEntityName": "subjectRegister",
+      "relationshipName": "subjectRegister",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

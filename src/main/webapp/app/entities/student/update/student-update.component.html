@@ -1,0 +1,92 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-student-heading" data-cy="StudentCreateUpdateHeading">Create or edit a Student</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" for="field_studentName">Student Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="studentName"
+            id="field_studentName"
+            data-cy="studentName"
+            formControlName="studentName"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_sex">Sex</label>
+          <input type="text" class="form-control" name="sex" id="field_sex" data-cy="sex" formControlName="sex" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_studentClass">Student Class</label>
+          <input
+            type="text"
+            class="form-control"
+            name="studentClass"
+            id="field_studentClass"
+            data-cy="studentClass"
+            formControlName="studentClass"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_studentKhoahoc">Student Khoahoc</label>
+          <input
+            type="text"
+            class="form-control"
+            name="studentKhoahoc"
+            id="field_studentKhoahoc"
+            data-cy="studentKhoahoc"
+            formControlName="studentKhoahoc"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_dob">Dob</label>
+          <div class="input-group">
+            <input
+              id="field_dob"
+              data-cy="dob"
+              type="text"
+              class="form-control"
+              name="dob"
+              ngbDatepicker
+              #dobDp="ngbDatepicker"
+              formControlName="dob"
+            />
+            <button type="button" class="btn btn-secondary" (click)="dobDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
